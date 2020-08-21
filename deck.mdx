@@ -70,11 +70,11 @@ export const theme = {
   <meta property="og:type" content="article" />
   <meta
     property="og:url"
-    content="https://visual-regression-test-in-react-native.now.sh/assets/oembed.json"
+    content="https://lightning-talk-react-native-techstand.vercel.app/assets/oembed.json"
   />
   <meta
     property="og:image"
-    content="https://visual-regression-test-in-react-native.now.sh/assets/card.png"
+    content="https://lightning-talk-react-native-techstand.vercel.app/assets/card.png"
   />
   <meta
     property="article:published_time"
@@ -85,20 +85,20 @@ export const theme = {
   <meta name="twitter:site" content="@Naturalclar" />
   <meta
     name="twitter:title"
-    content="Visual Regression Test in React Native"
+    content="React Native の Visual Regression Test について"
   />
   <meta
     name="twitter:description"
-    content="Visual Regression Test in React Native"
+    content="React Native の Visual Regression Test について"
   />
   <meta
     name="twitter:image"
-    content="https://visual-regression-test-in-react-native.now.sh/assets/card.png"
+    content="https://lightning-talk-react-native-techstand.vercel.app/assets/card.png"
   />
   <link
     rel="alternate"
     type="application/json+oembed"
-    href={`https://visual-regression-test-in-react-native.now.sh/assets/oembed.json`}
+    href={`https://lightning-talk-react-native-techstand.vercel.app/assets/oembed.json`}
     title="Visual Regression Test in React Native"
   />
 </Head>
@@ -112,60 +112,24 @@ export const theme = {
   >
     <Heading>
       <Text style={{ color: Colors.baseTextColor }}>
+        React Native{" "}
+      </Text>
+      <Text style={{ color: "#d081c4" }}>の</Text> <Text
+        style={{ color: Colors.secondaryColor }}
+      >
         Visual Regression Test{" "}
       </Text>
-      <Text style={{ color: "#d081c4" }}>for</Text> <Text style={{ color: Colors.secondaryColor }}>React Native</Text>
+      <Text style={{ color: Colors.baseTextColor }}>
+        について
+      </Text>
     </Heading>
     <MarginBottom size={24} />
     <Paragraph style={{ color: Colors.secondaryColor }}>
       @natural_clar
     </Paragraph>
     <MarginBottom size={24} />
-    <Paragraph>React Native EU 2020</Paragraph>
+    <Paragraph>TECH STAND #1 React Native</Paragraph>
   </View>
-</Page>
-
----
-
-<Page>
-  <SubHeading>Agenda</SubHeading>
-  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
-    <Circle>
-      <Paragraph style={{ color: "white" }}>
-        Introduction
-      </Paragraph>
-    </Circle>
-    <Circle>
-      <Paragraph style={{ color: "white" }}>
-        What is a
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Visual
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Regression
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Test?
-      </Paragraph>
-    </Circle>
-    <Circle>
-      <Paragraph style={{ color: "white" }}>
-        How do I
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        perform it with
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        React Native?
-      </Paragraph>
-    </Circle>
-    <Circle>
-      <Paragraph style={{ color: "white" }}>
-        Demo! 🚀
-      </Paragraph>
-    </Circle>
-  </Row>
 </Page>
 
 ---
@@ -258,6 +222,30 @@ export const theme = {
       <View style={{ flex: 1, width: 240, height: 240 }}>
         <img src={CureAppLogo} />
       </View>
+      <MarginBottom size={60} />
+      <View style={{ flex: 1, alignItems: "flex-start" }}>
+        <Paragraph>治療アプリの開発</Paragraph>
+        <MarginBottom size={8} />
+        <Paragraph style={{ color: Colors.secondaryColor }}>
+          国内初の「治療アプリ」の薬事承認 🎉
+        </Paragraph>
+        <MarginBottom size={8} />
+        <Paragraph>
+          全員が{" "}
+          <Paragraph
+            style={{ color: Colors.secondaryColor }}
+          >
+            TypeScript{" "}
+          </Paragraph>
+          エンジニア
+        </Paragraph>
+        <MarginBottom size={8} />
+        <Paragraph>
+          UI、ロジック、サーバー、インフラの分業
+        </Paragraph>
+        <MarginBottom size={8} />
+        <Paragraph>各管轄でテストを書いている</Paragraph>
+      </View>
     </Center>
     <Center>
       <View
@@ -269,43 +257,33 @@ export const theme = {
   </Row>
 </Page>
 
+<Note>
+  本日、厚生労働省より正式に薬事承認されることとなりました。
+</Note>
+
 ---
 
 <Page>
-  <SubHeading>Some of Tests we perform</SubHeading>
-  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
-    <Circle>
-      <Paragraph style={{ color: "white" }}>
-        Unit Tests
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Tests
-      </Paragraph>
-    </Circle>
-    <Circle>
-      <Paragraph style={{ color: "white" }}>
-        Integration
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Tests
-      </Paragraph>
-    </Circle>
-    <Circle
-      style={{ backgroundColor: Colors.secondaryColor }}
+  <Row>
+    <View
+      style={{ width: "100%", height: "100%", flex: 1 }}
     >
-      <Paragraph style={{ color: "white" }}>
-        UI Tests
+      <SubHeading>今日話すこと</SubHeading>
+      <MarginBottom size={60} />
+      <Paragraph>Visual Regression Test とは</Paragraph>
+      <MarginBottom size={16} />
+      <Paragraph>
+        Visual Regression Test のためのツール、Reg-suit
+        の紹介
       </Paragraph>
-    </Circle>
+      <MarginBottom size={16} />
+      <Paragraph>
+        React Native と組み合わせた UI の高速開発方法
+      </Paragraph>
+      <MarginBottom size={16} />
+      <Paragraph>実演デモ</Paragraph>
+    </View>
   </Row>
-</Page>
-
----
-
-<Page>
-  <Center>
-    <Heading>UI Testing</Heading>
-  </Center>
 </Page>
 
 ---
@@ -315,7 +293,7 @@ export const theme = {
     <View
       style={{ width: "100%", height: "100%", flex: 1 }}
     >
-      <SubHeading>UI Testing</SubHeading>
+      <SubHeading>Visual Regression Testing</SubHeading>
       <ul>
         <li
           style={{
@@ -323,7 +301,15 @@ export const theme = {
             marginBottom: 16,
           }}
         >
-          it..
+          UI Test の一環
+        </li>
+        <li
+          style={{
+            color: Colors.baseTextColor,
+            marginBottom: 16,
+          }}
+        >
+          各画面が期待通りの見た目であるかの確認
         </li>
         <ul>
           <li
@@ -332,7 +318,7 @@ export const theme = {
               marginBottom: 16,
             }}
           >
-            Displays an email input form
+            Email 入力欄がある
           </li>
           <li
             style={{
@@ -340,7 +326,7 @@ export const theme = {
               marginBottom: 16,
             }}
           >
-            Displays a password input form
+            パスワード入力欄がある
           </li>
           <li
             style={{
@@ -348,7 +334,7 @@ export const theme = {
               marginBottom: 16,
             }}
           >
-            Displays a Login Button
+            ログインボタンがある
           </li>
           <li
             style={{
@@ -356,7 +342,7 @@ export const theme = {
               marginBottom: 16,
             }}
           >
-            Has disabled button if a form is empty
+            Loading状態ではLoadingが表示される
           </li>
           <li
             style={{
@@ -364,23 +350,7 @@ export const theme = {
               marginBottom: 16,
             }}
           >
-            Displays loading on network request
-          </li>
-          <li
-            style={{
-              color: Colors.secondaryColor,
-              marginBottom: 16,
-            }}
-          >
-            Looks the way you intended
-          </li>
-          <li
-            style={{
-              color: Colors.baseTextColor,
-              marginBottom: 16,
-            }}
-          >
-            etc...
+            etc…
           </li>
         </ul>
       </ul>
@@ -474,166 +444,43 @@ export const theme = {
   </Row>
 </Page>
 
----
-
-<Page>
-  <SubHeading>UI Testing</SubHeading>
-  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
-    <Circle size={240}>
-      <Paragraph style={{ color: "white" }}>
-        Snapshot
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Testing
-      </Paragraph>
-    </Circle>
-    <Circle size={240}>
-      <Paragraph style={{ color: "white" }}>
-        Interaction
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Testing
-      </Paragraph>
-    </Circle>
-    <Circle
-      style={{ backgroundColor: Colors.secondaryColor }}
-      size={240}
-    >
-      <Paragraph style={{ color: "white" }}>
-        Visual
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Regression
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Testing
-      </Paragraph>
-    </Circle>
-    <Circle size={240}>
-      <Paragraph style={{ color: "white" }}>
-        etc...
-      </Paragraph>
-    </Circle>
-  </Row>
-</Page>
-
----
-
-<CodeSurferColumns themes={[github,vsDark]}>
-
-<Step>
-
-```jsx
-// source: https://jestjs.io/docs/en/tutorial-react-native
-// __tests__/Intro-test.js
-
-import React from "react";
-import Intro from "../Intro";
-
-import renderer from "react-test-renderer";
-
-test("renders correctly", () => {
-  const tree = renderer.create(<Intro />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-```
-
-<div>
-  <h1>Snapshot Testing</h1>
-</div>
-
-</Step>
-
-<Step>
-
-```jsx
-// source: https://jestjs.io/docs/en/tutorial-react-native
-// __tests__/__snapshots__/Intro-test.js.snap
-
-exports[`Intro renders correctly 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#F5FCFF",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <Text
-    style={
-      Object {
-        "fontSize": 20,
-        "margin": 10,
-        "textAlign": "center",
-      }
-    }>
-    Welcome to React Native!
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#333333",
-        "marginBottom": 5,
-        "textAlign": "center",
-      }
-    }>
-    This is a React Native snapshot test.
-  </Text>
-</View>
-`;
-```
-
-<div>
-  <h1>Snapshot Testing</h1>
-</div>
-
-</Step>
-
-<Step>
-
-```jsx
-// source: https://callstack.com/blog/react-native-testing-library-with-redux/
-// SignUpScreen.test.tsx
-
-test('User cannot SignUp with wrong credentials', async () => {
-  mockSignUpApi.mockImplementationOnce(() =>
-    Promise.resolve({
-      status: 401,
-      data: {
-        error: { 'Invalid username or password' }
-      }
-    }),
-  );
-
-  const screen = renderSignUpScreen();
-
-  fireEvent.changeText(screen.getByPlaceholder(/Username/i), 'user@callstack.com');
-  fireEvent.changeText(screen.getByPlaceholder(/Password/i), 'Incorrect Password');
-  fireEvent.press(screen.getByText('SignUp'));
-
-  expect(mockSignUpApi).toHaveBeenCalledTimes(1);
-  expect(mockSignUpApi).toHaveBeenCalledWith({
-    username: 'user@callstack.com',
-    password: 'Incorrect Password',
-  });
-  expect(await screen.findByText('Invalid username or password')).toBeTruthy();
-});
-```
-
-<div>
-  <h1>Interaction Testing</h1>
-</div>
-
-</Step>
-
-</CodeSurferColumns>
+<Note>
+  Visual Regression TestとはUI Test の一環です。UI
+  テストと言っても色々あるんですが、Visual Regression Test
+  は見た目についてフォーカスします。
+</Note>
 
 ---
 
 <Page>
   <SubHeading>Visual Regression Testing</SubHeading>
+  <MarginBottom size={60} />
+  <Paragraph>
+    CI と連携して、Pull Request 毎に元 branch との比較を作成
+  </Paragraph>
+  <Center>
+    <View
+      style={{
+        flex: 1,
+        width: "80%",
+      }}
+    >
+      <img src={Branches} />
+    </View>
+  </Center>
+</Page>
+
+---
+
+<Page>
   <Row>
+    <View
+      style={{ width: "100%", height: "100%", flex: 1 }}
+    >
+      <SubHeading>Visual Regression Testing</SubHeading>
+      <MarginBottom size={60} />
+      <Paragraph>変更発生時に差分を検知する</Paragraph>
+    </View>
     <Center>
       <View
         style={{
@@ -644,6 +491,16 @@ test('User cannot SignUp with wrong credentials', async () => {
         <img src={VisRegDiff} />
       </View>
     </Center>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Visual Regression Testing</SubHeading>
+  <MarginBottom size={60} />
+  <Paragraph>DOMの実装方法に無関心</Paragraph>
+  <Row>
     <Center style={{ flex: 2 }}>
       <View
         style={{
@@ -662,23 +519,9 @@ test('User cannot SignUp with wrong credentials', async () => {
 <Page>
   <SubHeading>Visual Regression Testing</SubHeading>
   <MarginBottom size={60} />
-  <Center>
-    <View
-      style={{
-        flex: 1,
-        width: "80%",
-      }}
-    >
-      <img src={Branches} />
-    </View>
-  </Center>
-</Page>
-
----
-
-<Page>
-  <SubHeading>Visual Regression Testing</SubHeading>
-  <MarginBottom size={60} />
+  <Paragraph>Pull Request 毎にレポートを作成</Paragraph>
+  <MarginBottom size={8} />
+  <Paragraph>不本意な変更を防ぐことが可能</Paragraph>
   <Center>
     <View
       style={{
@@ -689,6 +532,89 @@ test('User cannot SignUp with wrong credentials', async () => {
       <img src={VisRegReport} />
     </View>
   </Center>
+</Page>
+
+---
+
+<Page>
+  <img src={RegSuitLogo} />
+</Page>
+
+---
+
+<Page>
+  <SubHeading>REG SUIT</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        CLI で
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        セットアップ可能
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Screenshot を
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        クラウドに
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        保管 (S3, GCS)
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        無料で使える
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <Row>
+    <Center>
+      <View style={{ width: "50%" }}>
+        <img src={StorybookLogo} />
+      </View>
+    </Center>
+    <Center>
+      <SubHeading>with React Native for Web</SubHeading>
+    </Center>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Storybook + React Native Web</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        ロジックを省いた
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        見た目の確認
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        エミュレーター
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        要らず
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        効率的
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>分業</Paragraph>
+    </Circle>
+  </Row>
 </Page>
 
 ---
@@ -1027,208 +953,27 @@ export const LoginPage = () => {
 ---
 
 <Page>
-  <SubHeading>Other Reasons</SubHeading>
+  <SubHeading>まとめ - Visual Regression Test</SubHeading>
   <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
     <Circle size={360}>
       <Paragraph style={{ color: "white" }}>
-        Prevent
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        False Positives
+        レビュー時間短縮
       </Paragraph>
     </Circle>
     <Circle size={360}>
       <Paragraph style={{ color: "white" }}>
-        Refactor/Upgrade
+        ライブラリの
       </Paragraph>
       <Paragraph style={{ color: "white" }}>
-        Component Library
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        with confidence 💪
+        アップデートが安心
       </Paragraph>
     </Circle>
     <Circle size={360}>
-      <Paragraph style={{ color: "white" }}>Test</Paragraph>
       <Paragraph style={{ color: "white" }}>
-        Dark Mode 🌙
+        Storybook による
       </Paragraph>
       <Paragraph style={{ color: "white" }}>
-        with ease
-      </Paragraph>
-    </Circle>
-  </Row>
-</Page>
-
----
-
-<Page>
-  <SubHeading>Supporting Dark Mode</SubHeading>
-  <MarginBottom size={60} />
-  <Row>
-    <Center>
-      <View style={{ flex: 1, width: "80%" }}>
-        <img src={LightTheme} />
-      </View>
-    </Center>
-  </Row>
-</Page>
-
----
-
-<Page>
-  <SubHeading>Supporting Dark Mode</SubHeading>
-  <MarginBottom size={60} />
-  <Row>
-    <Center>
-      <View style={{ flex: 1, width: "80%" }}>
-        <img src={LightTheme} />
-      </View>
-    </Center>
-    <Center>
-      <View style={{ flex: 1, width: "80%" }}>
-        <img src={DarkTheme} />
-      </View>
-    </Center>
-  </Row>
-  <View
-    style={{
-      position: "absolute",
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-    }}
-  >
-    <Circle size={300}>
-      <Paragraph style={{ color: "white" }}>
-        2x as many
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        screens
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        to check!
-      </Paragraph>
-    </Circle>
-  </View>
-</Page>
-
----
-
-<Page>
-  <SubHeading>Why is it Important?</SubHeading>
-  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
-    <Circle size={360}>
-      <Paragraph style={{ color: "white" }}>
-        Reduce QA
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>Time</Paragraph>
-    </Circle>
-    <Circle size={360}>
-      <Paragraph style={{ color: "white" }}>
-        Automate
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Everything
-      </Paragraph>
-    </Circle>
-  </Row>
-</Page>
-
----
-
-<Page>
-  <Center>
-    <Heading>
-      How do I perform it with React Native?
-    </Heading>
-  </Center>
-</Page>
-
----
-
-<Page>
-  <img src={RegSuitLogo} />
-</Page>
-
----
-
-<Page>
-  <SubHeading>REG SUIT</SubHeading>
-  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Compare Images
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>with</Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Parent Branch
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        on Pull Requests
-      </Paragraph>
-    </Circle>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Easy Setup
-      </Paragraph>
-    </Circle>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Store
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Screenshots
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        to Cloud
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        (S3, GCS)
-      </Paragraph>
-    </Circle>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Automatically
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        Create Report
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        on Pull Requests
-      </Paragraph>
-    </Circle>
-  </Row>
-</Page>
-
----
-
-<Page>
-  <SubHeading>Storybook + React Native Web</SubHeading>
-  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Faster Build
-      </Paragraph>
-    </Circle>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Easily check
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        for Dark Mode
-      </Paragraph>
-    </Circle>
-    <Circle size={320}>
-      <Paragraph style={{ color: "white" }}>
-        Can be
-      </Paragraph>
-      <Paragraph style={{ color: "white" }}>
-        reused for web
+        UI開発の高速化
       </Paragraph>
     </Circle>
   </Row>
@@ -1247,45 +992,5 @@ export const LoginPage = () => {
 <Page>
   <Center>
     <Heading>THANK YOU!</Heading>
-    <MarginBottom size={60} />
-    <Paragraph>
-      DEMO:
-      https://github.com/Naturalclar/react-native-sketchbook
-    </Paragraph>
-    <MarginBottom size={8} />
-    <Paragraph>
-      Slides:
-      https://github.com/Naturalclar/slide-react-native-eu-2020
-    </Paragraph>
-    <MarginBottom size={24} />
-    <Row>
-      <View
-        style={{
-          width: 32,
-          height: 32,
-          justifyContent: "center",
-          alignItems: "center",
-          marginRight: 8,
-        }}
-      >
-        <img src={TwitterLogo} />
-      </View>
-      <Paragraph>@natural_clar</Paragraph>
-    </Row>
-    <MarginBottom size={8} />
-    <Row>
-      <View
-        style={{
-          width: 32,
-          height: 32,
-          justifyContent: "center",
-          alignItems: "center",
-          marginRight: 8,
-        }}
-      >
-        <img src={GithubLogo} />
-      </View>
-      <Paragraph>@Naturalclar</Paragraph>
-    </Row>
   </Center>
 </Page>

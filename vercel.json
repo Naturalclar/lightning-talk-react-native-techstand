@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "project": "visual-regression-test-in-react-native",
+  "project": "lightning-talk-react-native-techstand",
   "routes": [
     {
       "src": "/(.*)",
