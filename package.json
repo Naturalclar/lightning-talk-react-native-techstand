@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "deploy": "now",
+    "vercel-build": "yarn build"
+  },
+  "devDependencies": {
+    "code-surfer": "3.1.1",
+    "mdx-deck": "4.1.1",
+    "@mdx-deck/themes": "^4.1.0",
+    "now": "^18.0.0",
+    "puppeteer": "^3.0.1"
+  },
+  "name": "visual-regression-test-in-react-native",
+  "dependencies": {
+    "react-native-web": "^0.12.2"
+  }
+}

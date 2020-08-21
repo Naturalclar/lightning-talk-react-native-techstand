@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "project": "visual-regression-test-in-react-native",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "public/$1"
+    }
+  ]
+}

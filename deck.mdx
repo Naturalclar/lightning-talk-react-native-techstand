@@ -1,0 +1,1291 @@
+import {
+  CodeSurfer,
+  CodeSurferColumns,
+  Step,
+} from "code-surfer";
+import { github, vsDark } from "@code-surfer/themes";
+import {
+  Notes,
+  Head,
+  Appear,
+  Split,
+  Invert,
+} from "mdx-deck";
+import {
+  Meta,
+  Profile,
+  Page,
+  Colors,
+  Heading,
+  SubHeading,
+  Paragraph,
+  MarginBottom,
+  Circle,
+  Row,
+  Center,
+} from "./src";
+import ReactNative from "./react-native.png";
+import MyPic from "./images/my-pic.jpg";
+import CureAppLogo from "./images/cureapp-logo.png";
+import TwitterLogo from "./images/twitter-logo.png";
+import GithubLogo from "./images/github-logo.png";
+import VisRegDiff from "./images/vis-reg-diff.png";
+import VisRegSide from "./images/vis-reg-diff-2.png";
+import VisRegReport from "./images/vis-reg-report.png";
+import RegSuitLogo from "./images/reg-suit-logo.jpg";
+import StorybookLogo from "./images/storybook-logo.svg";
+import CureAppTech from "./images/cureapp-tech.png";
+import LightTheme from "./images/light-theme.png";
+import DarkTheme from "./images/dark-theme.png";
+import Branches from "./images/branches.svg";
+
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Platform,
+  ActivityIndicator,
+  StyleSheet,
+  Image,
+} from "react-native-web";
+
+export const theme = {
+  ...vsDark,
+  fonts: {
+    body: "-apple-system, system-ui, sans-serif",
+  },
+};
+
+<Head>
+  <title>Visual Regression Test in React Native</title>
+  <meta property="og:locale" content="ja_JP" />
+  <meta
+    property="og:title"
+    content="Visual Regression Test in React Native"
+  />
+  <meta
+    property="og:description"
+    content="Introduction to React Native"
+  />
+  <meta property="og:type" content="article" />
+  <meta
+    property="og:url"
+    content="https://visual-regression-test-in-react-native.now.sh/assets/oembed.json"
+  />
+  <meta
+    property="og:image"
+    content="https://visual-regression-test-in-react-native.now.sh/assets/card.png"
+  />
+  <meta
+    property="article:published_time"
+    content="2020-08-06T14:46:16.704Z"
+  />
+  <meta property="article:author" content="naturalclar" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Naturalclar" />
+  <meta
+    name="twitter:title"
+    content="Visual Regression Test in React Native"
+  />
+  <meta
+    name="twitter:description"
+    content="Visual Regression Test in React Native"
+  />
+  <meta
+    name="twitter:image"
+    content="https://visual-regression-test-in-react-native.now.sh/assets/card.png"
+  />
+  <link
+    rel="alternate"
+    type="application/json+oembed"
+    href={`https://visual-regression-test-in-react-native.now.sh/assets/oembed.json`}
+    title="Visual Regression Test in React Native"
+  />
+</Head>
+
+<Page>
+  <View
+    style={{
+      flex: 1,
+      justifyContent: "flex-end",
+    }}
+  >
+    <Heading>
+      <Text style={{ color: Colors.baseTextColor }}>
+        Visual Regression Test{" "}
+      </Text>
+      <Text style={{ color: "#d081c4" }}>for</Text> <Text style={{ color: Colors.secondaryColor }}>React Native</Text>
+    </Heading>
+    <MarginBottom size={24} />
+    <Paragraph style={{ color: Colors.secondaryColor }}>
+      @natural_clar
+    </Paragraph>
+    <MarginBottom size={24} />
+    <Paragraph>React Native EU 2020</Paragraph>
+  </View>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Agenda</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle>
+      <Paragraph style={{ color: "white" }}>
+        Introduction
+      </Paragraph>
+    </Circle>
+    <Circle>
+      <Paragraph style={{ color: "white" }}>
+        What is a
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Visual
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Regression
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Test?
+      </Paragraph>
+    </Circle>
+    <Circle>
+      <Paragraph style={{ color: "white" }}>
+        How do I
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        perform it with
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        React Native?
+      </Paragraph>
+    </Circle>
+    <Circle>
+      <Paragraph style={{ color: "white" }}>
+        Demo! 🚀
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Hello! 👋</SubHeading>
+  <MarginBottom size={60} />
+  <Paragraph>
+    I'm{" "}
+    <Text style={{ fontWeight: "600" }}>
+      Jesse Katsumata
+    </Text>
+  </Paragraph>
+  <MarginBottom size={8} />
+  <Row>
+    <View
+      style={{
+        width: 32,
+        height: 32,
+        justifyContent: "center",
+        alignItems: "center",
+        marginRight: 8,
+      }}
+    >
+      <img src={TwitterLogo} />
+    </View>
+    <Paragraph>@natural_clar</Paragraph>
+  </Row>
+  <MarginBottom size={8} />
+  <Row>
+    <View
+      style={{
+        width: 32,
+        height: 32,
+        justifyContent: "center",
+        alignItems: "center",
+        marginRight: 8,
+      }}
+    >
+      <img src={GithubLogo} />
+    </View>
+    <Paragraph>@Naturalclar</Paragraph>
+  </Row>
+  <MarginBottom size={60} />
+  <Paragraph>
+    Software Engineer at{" "}
+    <Text style={{ fontWeight: "600" }}>CureApp, Inc.</Text>
+  </Paragraph>
+  <MarginBottom size={60} />
+  <Paragraph>
+    Member of{" "}
+    <Text style={{ fontWeight: "600" }}>
+      react-native-community
+    </Text>
+  </Paragraph>
+  <MarginBottom size={8} />
+  <Paragraph>maintaining some Lean Core modules</Paragraph>
+  <MarginBottom size={60} />
+  <Paragraph>❤️ OSS & Music 🎹</Paragraph>
+  <View
+    style={{
+      position: "absolute",
+      height: 240,
+      width: 240,
+      top: "20%",
+      right: "20%",
+      transform: [{ rotate: "-20deg" }],
+    }}
+  >
+    <img src={MyPic} width="50%" />
+  </View>
+  <View
+    style={{
+      position: "absolute",
+      height: 240,
+      width: 240,
+      top: "60%",
+      right: "20%",
+    }}
+  >
+    <img src={CureAppLogo} width="50%" />
+  </View>
+</Page>
+
+---
+
+<Page>
+  <Row>
+    <Center>
+      <View style={{ flex: 1, width: 240, height: 240 }}>
+        <img src={CureAppLogo} />
+      </View>
+    </Center>
+    <Center>
+      <View
+        style={{ flex: 1, width: "100%", height: "50%" }}
+      >
+        <img src={CureAppTech} />
+      </View>
+    </Center>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Some of Tests we perform</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle>
+      <Paragraph style={{ color: "white" }}>
+        Unit Tests
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Tests
+      </Paragraph>
+    </Circle>
+    <Circle>
+      <Paragraph style={{ color: "white" }}>
+        Integration
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Tests
+      </Paragraph>
+    </Circle>
+    <Circle
+      style={{ backgroundColor: Colors.secondaryColor }}
+    >
+      <Paragraph style={{ color: "white" }}>
+        UI Tests
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <Center>
+    <Heading>UI Testing</Heading>
+  </Center>
+</Page>
+
+---
+
+<Page>
+  <Row>
+    <View
+      style={{ width: "100%", height: "100%", flex: 1 }}
+    >
+      <SubHeading>UI Testing</SubHeading>
+      <ul>
+        <li
+          style={{
+            color: Colors.baseTextColor,
+            marginBottom: 16,
+          }}
+        >
+          it..
+        </li>
+        <ul>
+          <li
+            style={{
+              color: Colors.baseTextColor,
+              marginBottom: 16,
+            }}
+          >
+            Displays an email input form
+          </li>
+          <li
+            style={{
+              color: Colors.baseTextColor,
+              marginBottom: 16,
+            }}
+          >
+            Displays a password input form
+          </li>
+          <li
+            style={{
+              color: Colors.baseTextColor,
+              marginBottom: 16,
+            }}
+          >
+            Displays a Login Button
+          </li>
+          <li
+            style={{
+              color: Colors.baseTextColor,
+              marginBottom: 16,
+            }}
+          >
+            Has disabled button if a form is empty
+          </li>
+          <li
+            style={{
+              color: Colors.baseTextColor,
+              marginBottom: 16,
+            }}
+          >
+            Displays loading on network request
+          </li>
+          <li
+            style={{
+              color: Colors.secondaryColor,
+              marginBottom: 16,
+            }}
+          >
+            Looks the way you intended
+          </li>
+          <li
+            style={{
+              color: Colors.baseTextColor,
+              marginBottom: 16,
+            }}
+          >
+            etc...
+          </li>
+        </ul>
+      </ul>
+    </View>
+    <Center>
+      <View
+        style={{
+          width: 320,
+          height: 480,
+          borderWidth: 1,
+          borderColor: Colors.baseTextColor,
+          borderRadius: 5,
+          padding: 24,
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <View style={{ alignSelf: "stretch" }}>
+          <Text
+            style={{
+              color: Colors.baseTextColor,
+              fontSize: 24,
+            }}
+          >
+            Awesome App Login
+          </Text>
+          <MarginBottom size={48} />
+          <Text style={{ color: Colors.baseTextColor }}>
+            email
+          </Text>
+          <MarginBottom size={24} />
+          <View
+            style={{
+              borderBottomColor: Colors.baseTextColor,
+              borderBottomWidth: 1,
+            }}
+          />
+          <MarginBottom size={24} />
+          <Text style={{ color: Colors.baseTextColor }}>
+            password
+          </Text>
+          <MarginBottom size={24} />
+          <View
+            style={{
+              borderBottomColor: Colors.baseTextColor,
+              borderBottomWidth: 1,
+            }}
+          />
+        </View>
+        <View>
+          <Row>
+            <View
+              style={{
+                width: 240,
+                height: 60,
+                padding: 24,
+                borderRadius: 24,
+                borderWidth: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                borderColor: Colors.baseTextColor,
+              }}
+            >
+              <Text style={{ color: Colors.baseTextColor }}>
+                Login
+              </Text>
+            </View>
+          </Row>
+          <MarginBottom size={16} />
+          <Row>
+            <View
+              style={{
+                width: 240,
+                height: 60,
+                padding: 24,
+                borderRadius: 24,
+                borderWidth: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                borderColor: Colors.baseTextColor,
+              }}
+            >
+              <Text style={{ color: Colors.baseTextColor }}>
+                Login with SNS
+              </Text>
+            </View>
+          </Row>
+        </View>
+      </View>
+    </Center>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>UI Testing</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={240}>
+      <Paragraph style={{ color: "white" }}>
+        Snapshot
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Testing
+      </Paragraph>
+    </Circle>
+    <Circle size={240}>
+      <Paragraph style={{ color: "white" }}>
+        Interaction
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Testing
+      </Paragraph>
+    </Circle>
+    <Circle
+      style={{ backgroundColor: Colors.secondaryColor }}
+      size={240}
+    >
+      <Paragraph style={{ color: "white" }}>
+        Visual
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Regression
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Testing
+      </Paragraph>
+    </Circle>
+    <Circle size={240}>
+      <Paragraph style={{ color: "white" }}>
+        etc...
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<CodeSurferColumns themes={[github,vsDark]}>
+
+<Step>
+
+```jsx
+// source: https://jestjs.io/docs/en/tutorial-react-native
+// __tests__/Intro-test.js
+
+import React from "react";
+import Intro from "../Intro";
+
+import renderer from "react-test-renderer";
+
+test("renders correctly", () => {
+  const tree = renderer.create(<Intro />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+```
+
+<div>
+  <h1>Snapshot Testing</h1>
+</div>
+
+</Step>
+
+<Step>
+
+```jsx
+// source: https://jestjs.io/docs/en/tutorial-react-native
+// __tests__/__snapshots__/Intro-test.js.snap
+
+exports[`Intro renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#F5FCFF",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }>
+    Welcome to React Native!
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#333333",
+        "marginBottom": 5,
+        "textAlign": "center",
+      }
+    }>
+    This is a React Native snapshot test.
+  </Text>
+</View>
+`;
+```
+
+<div>
+  <h1>Snapshot Testing</h1>
+</div>
+
+</Step>
+
+<Step>
+
+```jsx
+// source: https://callstack.com/blog/react-native-testing-library-with-redux/
+// SignUpScreen.test.tsx
+
+test('User cannot SignUp with wrong credentials', async () => {
+  mockSignUpApi.mockImplementationOnce(() =>
+    Promise.resolve({
+      status: 401,
+      data: {
+        error: { 'Invalid username or password' }
+      }
+    }),
+  );
+
+  const screen = renderSignUpScreen();
+
+  fireEvent.changeText(screen.getByPlaceholder(/Username/i), 'user@callstack.com');
+  fireEvent.changeText(screen.getByPlaceholder(/Password/i), 'Incorrect Password');
+  fireEvent.press(screen.getByText('SignUp'));
+
+  expect(mockSignUpApi).toHaveBeenCalledTimes(1);
+  expect(mockSignUpApi).toHaveBeenCalledWith({
+    username: 'user@callstack.com',
+    password: 'Incorrect Password',
+  });
+  expect(await screen.findByText('Invalid username or password')).toBeTruthy();
+});
+```
+
+<div>
+  <h1>Interaction Testing</h1>
+</div>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Page>
+  <SubHeading>Visual Regression Testing</SubHeading>
+  <Row>
+    <Center>
+      <View
+        style={{
+          flex: 1,
+          width: "65%",
+        }}
+      >
+        <img src={VisRegDiff} />
+      </View>
+    </Center>
+    <Center style={{ flex: 2 }}>
+      <View
+        style={{
+          flex: 1,
+          width: "60%",
+        }}
+      >
+        <img src={VisRegSide} />
+      </View>
+    </Center>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Visual Regression Testing</SubHeading>
+  <MarginBottom size={60} />
+  <Center>
+    <View
+      style={{
+        flex: 1,
+        width: "80%",
+      }}
+    >
+      <img src={Branches} />
+    </View>
+  </Center>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Visual Regression Testing</SubHeading>
+  <MarginBottom size={60} />
+  <Center>
+    <View
+      style={{
+        flex: 1,
+        width: "80%",
+      }}
+    >
+      <img src={VisRegReport} />
+    </View>
+  </Center>
+</Page>
+
+---
+
+<CodeSurferColumns themes={[github,vsDark]}>
+<Step>
+
+```jsx subtitle="SignUp Page"
+// SignUpPage.tsx
+import React from "react";
+import { Page, SignUpForm, PrimaryButton } from "../src";
+
+export const SignUpPage = () => {
+  return (
+    <Page>
+      <SignUpForm />
+      <PrimaryButton label={"SignUp"} onPress={SignUp} />
+    </Page>
+  );
+};
+```
+
+<View
+  style={{
+    width: 320,
+    height: 480,
+    borderWidth: 1,
+    borderColor: "white",
+    borderRadius: 5,
+    padding: 24,
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
+  <View style={{ alignSelf: "stretch" }}>
+    <Text style={{ color: "white", fontSize: 24 }}>
+      Awesome App Signup
+    </Text>
+    <MarginBottom size={48} />
+    <Text style={{ color: "white" }}>email</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+    <MarginBottom size={24} />
+    <Text style={{ color: "white" }}>password</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+  </View>
+  <View
+    style={{
+      width: 150,
+      height: 60,
+      padding: 24,
+      borderRadius: 24,
+      borderWidth: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      borderColor: "white",
+    }}
+  >
+    <Text style={{ color: "white" }}>SignUp</Text>
+  </View>
+</View>
+
+</Step>
+
+<Step>
+
+```jsx subtitle="PrimaryButton"
+// PrimaryButton.tsx
+import React from "react";
+import { View, Text } from "react-native";
+
+export const PrimaryButton = ({ label, onPress }) => {
+  return (
+    <TouchableOpacity
+      style={{
+        width: 150,
+        height: 60,
+        padding: 24,
+        borderRadius: 24,
+        borderWidth: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: "white",
+      }}
+    >
+      <Text>{label}</Text>
+    </TouchableOpacity>
+  );
+};
+```
+
+<View
+  style={{
+    width: 320,
+    height: 480,
+    borderWidth: 1,
+    borderColor: "white",
+    borderRadius: 5,
+    padding: 24,
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
+  <View style={{ alignSelf: "stretch" }}>
+    <Text style={{ color: "white", fontSize: 24 }}>
+      Awesome App Signup
+    </Text>
+    <MarginBottom size={48} />
+    <Text style={{ color: "white" }}>email</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+    <MarginBottom size={24} />
+    <Text style={{ color: "white" }}>password</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+  </View>
+  <View
+    style={{
+      width: 150,
+      height: 60,
+      padding: 24,
+      borderRadius: 24,
+      borderWidth: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      borderColor: "white",
+    }}
+  >
+    <Text style={{ color: "white" }}>SignUp</Text>
+  </View>
+</View>
+
+</Step>
+
+<Step>
+
+```jsx subtitle="PrimaryButton"
+// PrimaryButton.tsx
+import React from "react";
+import { View, Text } from "react-native";
+
+export const PrimaryButton = ({ label, onPress }) => {
+  return (
+    <TouchableOpacity
+      style={{
+        width: 240,
+        height: 60,
+        padding: 24,
+        borderRadius: 24,
+        borderWidth: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: "white",
+      }}
+    >
+      <Text>{label}</Text>
+    </TouchableOpacity>
+  );
+};
+```
+
+<View
+  style={{
+    width: 320,
+    height: 480,
+    borderWidth: 1,
+    borderColor: "white",
+    borderRadius: 5,
+    padding: 24,
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
+  <View style={{ alignSelf: "stretch" }}>
+    <Text style={{ color: "white", fontSize: 24 }}>
+      Awesome App Signup
+    </Text>
+    <MarginBottom size={48} />
+    <Text style={{ color: "white" }}>email</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+    <MarginBottom size={24} />
+    <Text style={{ color: "white" }}>password</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+  </View>
+  <View
+    style={{
+      width: 240,
+      height: 60,
+      padding: 24,
+      borderRadius: 24,
+      borderWidth: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      borderColor: "white",
+    }}
+  >
+    <Text style={{ color: "white" }}>SignUp</Text>
+  </View>
+</View>
+
+</Step>
+
+<Step>
+
+```jsx subtitle="Login Page"
+// PrimaryButton.tsx
+import React from "react";
+import { View, Text } from "react-native";
+import {
+  Page,
+  LoginForm,
+  Row,
+  PrimaryButton,
+} from "../src";
+
+export const LoginPage = () => {
+  return (
+    <Page>
+      <LoginForm />
+      <Row>
+        <PrimaryButton
+          label={"Register"}
+          onPress={Register}
+        />
+        <PrimaryButton label={"Login"} onPress={Login} />
+      </Row>
+    </Page>
+  );
+};
+```
+
+<View
+  style={{
+    width: 320,
+    height: 480,
+    borderWidth: 1,
+    borderColor: "white",
+    borderRadius: 5,
+    padding: 24,
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
+  <View style={{ alignSelf: "stretch" }}>
+    <Text style={{ color: "white", fontSize: 24 }}>
+      Awesome App Login
+    </Text>
+    <MarginBottom size={48} />
+    <Text style={{ color: "white" }}>email</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+    <MarginBottom size={24} />
+    <Text style={{ color: "white" }}>password</Text>
+    <MarginBottom size={24} />
+    <View
+      style={{
+        borderBottomColor: "white",
+        borderBottomWidth: 1,
+      }}
+    />
+  </View>
+  <Row>
+    <View
+      style={{
+        width: 240,
+        height: 60,
+        padding: 24,
+        borderRadius: 24,
+        borderWidth: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: "white",
+      }}
+    >
+      <Text style={{ color: "white" }}>Register</Text>
+    </View>
+    <View
+      style={{
+        width: 240,
+        height: 60,
+        padding: 24,
+        borderRadius: 24,
+        borderWidth: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: "white",
+      }}
+    >
+      <Text style={{ color: "white" }}>Login</Text>
+    </View>
+  </Row>
+</View>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Page>
+  <SubHeading>Other Reasons</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={360}>
+      <Paragraph style={{ color: "white" }}>
+        Prevent
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        False Positives
+      </Paragraph>
+    </Circle>
+    <Circle size={360}>
+      <Paragraph style={{ color: "white" }}>
+        Refactor/Upgrade
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Component Library
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        with confidence 💪
+      </Paragraph>
+    </Circle>
+    <Circle size={360}>
+      <Paragraph style={{ color: "white" }}>Test</Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Dark Mode 🌙
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        with ease
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Supporting Dark Mode</SubHeading>
+  <MarginBottom size={60} />
+  <Row>
+    <Center>
+      <View style={{ flex: 1, width: "80%" }}>
+        <img src={LightTheme} />
+      </View>
+    </Center>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Supporting Dark Mode</SubHeading>
+  <MarginBottom size={60} />
+  <Row>
+    <Center>
+      <View style={{ flex: 1, width: "80%" }}>
+        <img src={LightTheme} />
+      </View>
+    </Center>
+    <Center>
+      <View style={{ flex: 1, width: "80%" }}>
+        <img src={DarkTheme} />
+      </View>
+    </Center>
+  </Row>
+  <View
+    style={{
+      position: "absolute",
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+    }}
+  >
+    <Circle size={300}>
+      <Paragraph style={{ color: "white" }}>
+        2x as many
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        screens
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        to check!
+      </Paragraph>
+    </Circle>
+  </View>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Why is it Important?</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={360}>
+      <Paragraph style={{ color: "white" }}>
+        Reduce QA
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>Time</Paragraph>
+    </Circle>
+    <Circle size={360}>
+      <Paragraph style={{ color: "white" }}>
+        Automate
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Everything
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <Center>
+    <Heading>
+      How do I perform it with React Native?
+    </Heading>
+  </Center>
+</Page>
+
+---
+
+<Page>
+  <img src={RegSuitLogo} />
+</Page>
+
+---
+
+<Page>
+  <SubHeading>REG SUIT</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Compare Images
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>with</Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Parent Branch
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        on Pull Requests
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Easy Setup
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Store
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Screenshots
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        to Cloud
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        (S3, GCS)
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Automatically
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        Create Report
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        on Pull Requests
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <SubHeading>Storybook + React Native Web</SubHeading>
+  <Row style={{ flex: 1, justifyContent: "space-evenly" }}>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Faster Build
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Easily check
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        for Dark Mode
+      </Paragraph>
+    </Circle>
+    <Circle size={320}>
+      <Paragraph style={{ color: "white" }}>
+        Can be
+      </Paragraph>
+      <Paragraph style={{ color: "white" }}>
+        reused for web
+      </Paragraph>
+    </Circle>
+  </Row>
+</Page>
+
+---
+
+<Page>
+  <Center>
+    <Heading>DEMO</Heading>
+  </Center>
+</Page>
+
+---
+
+<Page>
+  <Center>
+    <Heading>THANK YOU!</Heading>
+    <MarginBottom size={60} />
+    <Paragraph>
+      DEMO:
+      https://github.com/Naturalclar/react-native-sketchbook
+    </Paragraph>
+    <MarginBottom size={8} />
+    <Paragraph>
+      Slides:
+      https://github.com/Naturalclar/slide-react-native-eu-2020
+    </Paragraph>
+    <MarginBottom size={24} />
+    <Row>
+      <View
+        style={{
+          width: 32,
+          height: 32,
+          justifyContent: "center",
+          alignItems: "center",
+          marginRight: 8,
+        }}
+      >
+        <img src={TwitterLogo} />
+      </View>
+      <Paragraph>@natural_clar</Paragraph>
+    </Row>
+    <MarginBottom size={8} />
+    <Row>
+      <View
+        style={{
+          width: 32,
+          height: 32,
+          justifyContent: "center",
+          alignItems: "center",
+          marginRight: 8,
+        }}
+      >
+        <img src={GithubLogo} />
+      </View>
+      <Paragraph>@Naturalclar</Paragraph>
+    </Row>
+  </Center>
+</Page>
